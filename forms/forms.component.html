@@ -1,0 +1,37 @@
+<section class="container">
+    <h2>
+        Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="Submit()">
+        <label for=" first-name">First Name: </label>
+        <input id="first-name" type="text" formControlName="firstName">
+        <div class="alert" *ngIf="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched">
+            Name is required
+        </div>
+        <label for="last-name">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastName">
+        <div class="alert" *ngIf="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched">
+            Last name is required
+        </div>
+        <label for="education">Education: </label>
+        <input id="education" type="text" formControlName="education">
+        <div class="alert" *ngIf="profileForm.controls['education'].invalid && profileForm.controls['education'].touched">
+            Education is required
+        </div>
+        <label for="phone">Phone number: </label>
+        <input id="phone" type="text" formControlName="phone" placeholder="375XXXXXXXXX">
+        <div class="alert" *ngIf="profileForm.controls['phone'].invalid && profileForm.controls['phone'].touched">
+            Phone number is not correct
+        </div>
+        <h2>Place of work</h2>
+        <div formArrayName="placeWork">
+            <div *ngFor="let work of placeWork.controls; let i=index">
+                <label for="work-{{ i }}">Work #{{i+1}}</label>
+                <input id="work-{{ i }}" type="text" [formControlName]="i">
+                <div class="alert" *ngIf="work.invalid && work.touched"> Place of work is required </div>
+            </div>
+        </div>
+        <button class="add" (click)="addWork() " type="button">+ Add</button>
+    </form>
+    <button class="pulse " (click)="Submit()" [disabled]="profileForm.invalid ">Submit</button>
+    <div class="profile-data "> Profile data: {{profileData}}</div>
+</section>

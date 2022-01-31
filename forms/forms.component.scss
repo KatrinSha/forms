@@ -1,0 +1,74 @@
+    .container {
+        display: flex;
+        flex-direction: column;
+        background-color: #dfe0d646;
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        ;
+    }
+    
+    input[type=text] {
+        border: 1px solid black
+    }
+    
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    
+    input[type=text]:focus {
+        border: 3px solid rgb(219, 71, 71);
+    }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    
+    button:disabled {
+        background-color: #e90a0a;
+    }
+    
+    .add {
+        padding: 8px 8px;
+        width: 50px;
+    }
+    
+    .pulse:hover,
+    .pulse:focus {
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+        animation: pulse 1s;
+    }
+    
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 #e8eb52
+        }
+    }
+    
+    .alert {
+        color: red;
+    }
+    
+    .profile-data {
+        margin-top: 20px;
+    }
